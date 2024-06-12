@@ -78,17 +78,21 @@ class MainActivity : AppCompatActivity() {
 
 
         binding.btnEqual.setOnClickListener {
-            val expression = ExpressionBuilder(binding.inputtext.text.toString()).build()
-            val result = expression.evaluate()
-            val longresult = result.toLong()
+            try {
+                val expression = ExpressionBuilder(binding.inputtext.text.toString()).build()
+                val result = expression.evaluate()
+                val longresult = result.toLong()
 
-            if (result == longresult.toDouble()) {
-                binding.outputtext.text = longresult.toString()
-            } else {
-                binding.outputtext.text = result.toString()
+                if (result == longresult.toDouble()) {
+                    binding.outputtext.text = longresult.toString()
+                } else {
+                    binding.outputtext.text = result.toString()
+                }
+            } catch (e: ArithmeticException) {
+                binding.outputtext.text = "Error: infinite"
+            } catch (e: Exception) {
+                binding.outputtext.text = "Error"
             }
-
-
         }
 
 

@@ -77,6 +77,7 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+
         binding.btnEqual.setOnClickListener {
             try {
                 val expression = ExpressionBuilder(binding.inputtext.text.toString()).build()
@@ -92,6 +93,13 @@ class MainActivity : AppCompatActivity() {
                 binding.outputtext.text = "Error: infinite"
             } catch (e: Exception) {
                 binding.outputtext.text = "Error"
+            }
+        }
+
+        binding.btnDlt.setOnClickListener {
+            val currentText = binding.inputtext.text.toString()
+            if (currentText.isNotEmpty()) {
+                binding.inputtext.text = currentText.dropLast(1)
             }
         }
 

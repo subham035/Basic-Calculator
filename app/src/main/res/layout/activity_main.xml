@@ -216,17 +216,19 @@
             <ImageView
                 android:layout_width="70dp"
                 android:layout_height="70dp"
-                android:layout_margin="8dp"
-                android:background="@drawable/group_13"
-                android:visibility="gone" />
+                android:id="@+id/btn_dlt"
+                android:layout_marginStart="19dp"
+                android:layout_marginEnd="19dp"
+                android:background="@drawable/group_30"
+                android:visibility="visible" />
 
             <ImageView
-                android:layout_width="178dp"
+                android:layout_width="70dp"
                 android:layout_height="70dp"
                 android:id="@+id/btn_0"
                 android:layout_marginStart="19dp"
                 android:layout_marginEnd="19dp"
-                android:background="@drawable/group_2" />
+                android:background="@drawable/group_26" />
 
             <ImageView
                 android:layout_width="70dp"
